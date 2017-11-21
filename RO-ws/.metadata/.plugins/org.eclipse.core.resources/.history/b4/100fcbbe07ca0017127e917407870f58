@@ -1,0 +1,4 @@
+public enum Algo {
+	RW, RS, BI;
+	
+}

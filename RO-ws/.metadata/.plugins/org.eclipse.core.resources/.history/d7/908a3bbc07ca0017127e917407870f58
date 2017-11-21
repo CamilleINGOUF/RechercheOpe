@@ -1,0 +1,9 @@
+public enum Algo {
+	RW("rw"), RS("rs"), BI("bi");
+
+	private String algo;
+	
+	private Algo(String algo){
+		this.algo = algo;
+	}	
+}

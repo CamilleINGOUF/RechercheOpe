@@ -1,0 +1,3 @@
+public enum Algo {
+	RW("rw"), RS("rs");
+}

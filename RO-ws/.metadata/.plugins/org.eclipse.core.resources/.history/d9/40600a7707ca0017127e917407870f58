@@ -1,0 +1,7 @@
+public enum Algo {
+	RW("rw"), RS("rs");
+	
+	private Algo(String color){
+	    this.color = color;
+	  }
+}
