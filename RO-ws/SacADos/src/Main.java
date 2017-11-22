@@ -12,9 +12,10 @@ public class Main
 		int[] nbEvals = {1000,5000,10000,50000,100000};
 		int nbExec = 30;
 		
-		sac.outputResults(nbEvals,nbExec,Algo.BI);
-		sac.outputResults(nbEvals,nbExec,Algo.FI);
-		sac.outputResults(nbEvals,nbExec,Algo.WI);
+//		sac.outputResults(nbEvals,nbExec,Algo.BI);
+//		sac.outputResults(nbEvals,nbExec,Algo.FI);
+//		sac.outputResults(nbEvals,nbExec,Algo.WI);
+		sac.outputResults(nbEvals,nbExec,Algo.RecuitSimule);
 		
 		System.out.println("Done.");
 	}

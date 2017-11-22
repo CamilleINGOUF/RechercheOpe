@@ -276,6 +276,48 @@ public class SacADos
 		return fitness;
 	}
 
+	private double recuitSimule(int[] sacTemp, int nbEvalMax, double fitmax, float temperature, float alpha, int tempertureUpdate) {
+		int[] sacBuffer = new int[nbObjects];
+		System.arraycopy( sacTemp, 0, sacBuffer, 0, sacTemp.length );
+		double fitness = eval(sacBuffer);
+		
+		boolean flag = true;
+		int nbEval = 0;
+		int iterations = 0;
+		
+		do {
+			
+			int randomIndex = (int)(Math.random()*nbObjects);
+			flipI(sacBuffer, randomIndex);
+			
+			nbEval++;
+			float neighborFitness = eval(sacBuffer);
+			double delta = neighborFitness - fitness;
+			
+			if(delta > 0) {
+				fitness = neighborFitness;
+			} else {
+				float u = (float) Math.random();
+				double exp = Math.exp(delta / temperature);
+				if(u < exp) {
+					fitness = neighborFitness;
+				} else {
+					flipI(sacBuffer, randomIndex);
+				}
+			}
+			
+			if(iterations % tempertureUpdate == 0) {
+				temperature *= alpha;
+			}
+			
+			if(nbEval >= nbEvalMax)
+				flag = false;
+			iterations ++;
+		} while (flag);
+		
+		return fitness;
+	}
+
 	private void flipI(int[] sacBuffer, int i) {
 		sacBuffer[i] = sacBuffer[i] == 0 ? 1 : 0;
 	}
@@ -289,19 +331,21 @@ public class SacADos
 		String fileName = new String();
 		double bestEval = 0;
 
-		if(algo == Algo.RS)
+		if(algo == Algo.RandomSearch)
 			fileName = "rs.csv";
-		else if(algo == Algo.RW)
+		else if(algo == Algo.RandomWalk)
 			fileName = "rw.csv";
-		else if(algo == Algo.BI)
+		else if(algo == Algo.BestImprovment)
 			fileName = "bi.csv";
-		else if(algo == Algo.FI)
+		else if(algo == Algo.FirstImprovment)
 			fileName = "fi.csv";
-		else if(algo == Algo.WI)
+		else if(algo == Algo.WorstImprovment)
 			fileName = "wi.csv";
+		else if(algo == Algo.RecuitSimule)
+			fileName = "recuit_simule.csv";
 
 		PrintWriter writer = new PrintWriter(fileName, "UTF-8");
-		writer.println("nbeval fitness fitmax nbevalmax");
+		writer.println("nbeval fitness fitmax");
 
 		for(int i = 0; i < nbEvals.length; i++)
 		{
@@ -310,21 +354,25 @@ public class SacADos
 				for(int k = 0; k < sacTemp.length; k++)
 					sacTemp[k] = Math.random()<0.5?0:1;
 				
-				int nbEvalMax = 2000;
+				float temperature = 10;
+				float alpha = .95f;
+				int tempertureUpdate = 50;
 				
-				if(algo == Algo.RS)
+				if(algo == Algo.RandomSearch)
 					bestEval = rs(sacTemp, nbEvals[i]);
-				else if(algo == Algo.RW)
+				else if(algo == Algo.RandomWalk)
 					bestEval = rw(sacTemp, nbEvals[i]);
-				else if(algo == Algo.BI)
+				else if(algo == Algo.BestImprovment)
 					bestEval = bestImprovment(sacTemp, nbEvals[i],fitmax, nbEvals[i]);
-				else if(algo == Algo.FI) 
+				else if(algo == Algo.FirstImprovment) 
 					bestEval = firstImprovment(sacTemp, nbEvals[i],fitmax, nbEvals[i]);
-				else if(algo == Algo.WI) 
+				else if(algo == Algo.WorstImprovment) 
 					bestEval = worstImprovment(sacTemp, nbEvals[i],fitmax, nbEvals[i]);
+				else if(algo == Algo.RecuitSimule)
+					bestEval = recuitSimule(sacTemp, nbEvals[i], fitmax, temperature, alpha, tempertureUpdate);
 				
 				
-				writer.println(nbEvals[i] + " " + bestEval + " " + fitmax + " " + nbEvalMax);
+				writer.println(nbEvals[i] + " " + bestEval + " " + fitmax);
 				System.out.println(nbEvals[i] + " " + bestEval);
 			}
 		}

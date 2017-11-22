@@ -1,7 +1,8 @@
 public enum Algo {
-	RW, 
-	RS, 
-	BI,
-	FI,
-	WI;
+	RandomWalk, 
+	RandomSearch, 
+	BestImprovment,
+	FirstImprovment,
+	WorstImprovment,
+	RecuitSimule;
 }

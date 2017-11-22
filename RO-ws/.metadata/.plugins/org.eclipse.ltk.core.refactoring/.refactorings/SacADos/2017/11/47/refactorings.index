@@ -1,2 +1,8 @@
 1511277958612	Rename local variable 'bestNeighbor'
 1511280426728	Change method 'firstImprovment'
+1511355689612	Rename enum constant 'RW'
+1511355699745	Rename enum constant 'RS'
+1511355711565	Rename enum constant 'BI'
+1511355719227	Rename enum constant 'FI'
+1511355733690	Rename enum constant 'WI'
+1511355743874	Rename enum constant 'RSim'
