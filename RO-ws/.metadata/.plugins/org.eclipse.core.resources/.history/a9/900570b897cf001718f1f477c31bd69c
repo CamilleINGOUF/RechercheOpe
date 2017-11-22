@@ -1,0 +1,9 @@
+
+public class RandomWalk extends LocalSearch {
+
+	@Override
+	public void run(Solution s) {
+
+	}
+
+}

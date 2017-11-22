@@ -1,0 +1,29 @@
+
+public class BestImprovment extends LocalSearch {
+
+	public BestImprovment(Problem problem) {
+		super(problem);
+	}
+	
+	public BestImprovment(Problem problem, int numberEvalMax, double fitnessMax) {
+		super(problem);
+		this.numberEvalMax = numberEvalMax;
+		this.fitnessMax = fitnessMax;
+	}
+
+	@Override
+	public void run(Solution s) {
+		Solution solutionBuffer = new Solution(s);
+		
+		boolean flag = true;
+		problem.eval(solutionBuffer);
+		double fitness = problem.eval;
+		
+		int numberEval = 0;
+		
+		do {
+			
+		} while (flag);
+	}
+
+}

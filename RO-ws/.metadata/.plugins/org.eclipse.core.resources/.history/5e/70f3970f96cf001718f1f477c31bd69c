@@ -1,0 +1,18 @@
+
+public abstract class LocalSearch {
+	
+	public Problem problem;
+	
+	public LocalSearch(Problem problem)
+	{
+		this.problem = problem;
+	}
+	
+	public void setOptions(int numberEvalMax, double fitnessMax)
+	{
+		this.numberEvalMax = numberEvalMax;
+		this.fitnessMax = fitnessMax;
+	}
+	
+	public abstract void run(Solution s);
+}

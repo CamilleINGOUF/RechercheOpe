@@ -1,0 +1,14 @@
+import java.util.Vector;
+
+public class Solution {
+	public Vector<Integer> bits;
+	
+	public Solution(int size) {
+		bits = new Vector<Integer>(size);
+	}
+	
+	public void resize(int size)
+	{
+		bits = new Vector<Integer>(size);
+	}
+}

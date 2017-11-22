@@ -1,0 +1,10 @@
+
+public class BestImprovment extends LocalSearch {
+
+	@Override
+	public void run(Solution s) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

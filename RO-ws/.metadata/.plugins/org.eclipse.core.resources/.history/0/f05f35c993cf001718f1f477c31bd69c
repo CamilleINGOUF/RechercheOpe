@@ -1,0 +1,39 @@
+
+public class RandomSearch extends LocalSearch {
+
+	int numberEvalMax;
+	double fitnessMax;
+	
+	double bestFitness;
+	
+	public RandomSearch(Problem problem) {
+		super(problem);
+		
+		numberEvalMax = 1000;
+		fitnessMax = 30000;
+	}
+	
+	public RandomSearch(Problem problem, int numberEvalMax, double fitnessMax) {
+		super(problem);
+		this.numberEvalMax = numberEvalMax;
+		this.fitnessMax = fitnessMax;
+	}
+	
+	public void setOptions(int numberEvalMax, double fitnessMax)
+	{
+		this.numberEvalMax = numberEvalMax;
+		this.fitnessMax = fitnessMax;
+	}
+
+	@Override
+	public void run(Solution s) {
+		Solution solutionBuffer = new Solution(s);
+		
+		boolean flag = true;
+		
+		do {
+			
+		} while (flag);
+	}
+
+}

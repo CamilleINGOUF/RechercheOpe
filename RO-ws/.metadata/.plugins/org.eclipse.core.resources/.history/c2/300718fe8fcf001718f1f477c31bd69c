@@ -1,0 +1,37 @@
+import java.util.Vector;
+
+public class Solution {
+	public Vector<Integer> bits;
+	
+	public Solution(int size) {
+		bits = new Vector<Integer>(size);
+		for(int i = 0; i < size; i++)
+			bits.set(i,0);
+	}
+	
+	public Solution(Solution that) {
+		bits = new Vector<>(that.bits.size());
+		for(int i = 0; i < that.bits.size(); i++)
+			bits.set(i,new Integer(that.bits.get(i)));
+	}
+	
+	public void resize(int size)
+	{
+		bits = new Vector<Integer>(size);
+	}
+	
+	public void randomSolution() {
+		for(int k = 0; k < bits.size(); k++)
+			bits.set(k,Math.random()<0.5?0:1);
+	}
+	
+	public int get(int i)
+	{
+		return bits.get(i);
+	}
+	
+	public void set(int i, int v)
+	{
+		bits.set(i, v);
+	}
+}

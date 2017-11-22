@@ -6,3 +6,6 @@
 1511355719227	Rename enum constant 'FI'
 1511355733690	Rename enum constant 'WI'
 1511355743874	Rename enum constant 'RSim'
+1511358755900	Rename field 'weigths'
+1511358941508	Rename type 'KBag'
+1511358945993	Rename type 'KnapSak'

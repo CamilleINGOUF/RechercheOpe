@@ -1,0 +1,12 @@
+
+public abstract class LocalSearch {
+	
+	public Problem problem;
+	
+	public LocalSearch(Problem problem)
+	{
+		this.problem = problem;
+	}
+	
+	public abstract void run(Solution s);
+}

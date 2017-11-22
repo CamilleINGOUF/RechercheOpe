@@ -1,0 +1,22 @@
+
+public class RandomSearch extends LocalSearch {
+
+	int numberEvalMax;
+	
+	public RandomSearch(Problem problem) {
+		super(problem);
+		
+		numberEvalMax = 1000;
+	}
+	
+	public RandomSearch(Problem problem, int numberEvalMax) {
+		super(problem);
+		this.numberEvalMax = numberEvalMax;
+	}
+
+	@Override
+	public void run(Solution s) {
+
+	}
+
+}

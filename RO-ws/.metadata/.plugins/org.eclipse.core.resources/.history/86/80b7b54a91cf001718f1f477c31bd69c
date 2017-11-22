@@ -1,0 +1,6 @@
+
+public abstract class LocalSearch {
+	public LocalSearch(Problem problem)
+	
+	public abstract void run(Solution s);
+}

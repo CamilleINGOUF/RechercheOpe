@@ -1,0 +1,44 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+import java.util.Vector;
+
+public class KnapSack {
+	
+	Vector<Integer> profits;
+	Vector<Integer> weights;
+	
+	int c;
+	int size;
+	float beta;
+	
+	public KnapSack(String datFile) throws FileNotFoundException {
+		profits = new Vector<Integer>();
+		weights = new Vector<Integer>();
+		
+		openDat(datFile);
+		
+		for(int i = 0; i < size; i++)
+		{
+			float buffer = profits.get(i) / (float)weights.get(i); 
+			if(buffer > beta)
+				beta = buffer;
+		}
+	}
+	
+	private void openDat(String datFile) throws FileNotFoundException {
+		Scanner sc = new Scanner(new File(datFile));
+
+		size = sc.nextInt();
+		
+		for(int i = 0; i < size; i++)
+			profits.add(sc.nextInt());
+
+		for(int i = 0; i < size; i++)
+			weights.add(sc.nextInt());
+		
+		c = sc.nextInt();
+		
+		sc.close();
+	}
+}

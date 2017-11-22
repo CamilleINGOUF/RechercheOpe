@@ -1,0 +1,39 @@
+import java.io.FileNotFoundException;
+import java.io.UnsupportedEncodingException;
+
+public class Main 
+{	
+	public static void main(String[] args) throws FileNotFoundException, UnsupportedEncodingException
+	{
+//		SacADos sac = SacADos.openDat("ks_1000.dat");
+//		SacADos sac = SacADos.openDat("ks_5.dat");
+//		System.out.println(sac);
+		
+		int[] nbEvals = {1000,5000,10000,50000,100000};
+		int nbExec = 30;
+	
+		Problem problem = new KnapSack("ks_1000.dat");
+		Solution solution = new Solution(problem.size);
+		solution.randomSolution();
+		
+		LocalSearch ls;
+		
+		Algo algo = Algo.RandomSearch;
+		
+		switch (algo) {
+		case RandomSearch:
+			ls = new RandomSearch(problem);
+			break;
+		default:
+			ls = null;
+			break;
+		}
+		
+		ls.setOptions(nbEvals[0], 30000);
+		ls.run(solution);
+		
+		System.out.println(ls.bestFitness);
+		
+		System.out.println("Done.");
+	}
+}
