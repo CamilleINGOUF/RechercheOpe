@@ -127,7 +127,6 @@ public class SacADos
 				}
 				
 				if(nbEval >= NbEvalMax) {
-					flag = false;
 					break;
 				}
 				
@@ -190,7 +189,6 @@ public class SacADos
 				}
 				
 				if(nbEval >= NbEvalMax) {
-					flag = false;
 					break;
 				}
 				
@@ -317,11 +315,11 @@ public class SacADos
 				else if(algo == Algo.RW)
 					bestEval = rw(sacTemp, nbEvals[i]);
 				else if(algo == Algo.BI)
-					bestEval = bestImprovment(sacTemp, nbEvals[i],fitmax, nbEvals[i]);
+					bestEval = bestImprovment(sacTemp, nbEvals[i],fitmax, nbEvalMax);
 				else if(algo == Algo.FI) 
-					bestEval = firstImprovment(sacTemp, nbEvals[i],fitmax, nbEvals[i]);
+					bestEval = firstImprovment(sacTemp, nbEvals[i],fitmax, nbEvalMax);
 				else if(algo == Algo.WI) 
-					bestEval = worstImprovment(sacTemp, nbEvals[i],fitmax, nbEvals[i]);
+					bestEval = worstImprovment(sacTemp, nbEvals[i],fitmax, nbEvalMax);
 				
 				
 				writer.println(nbEvals[i] + " " + bestEval + " " + fitmax + " " + nbEvalMax);
