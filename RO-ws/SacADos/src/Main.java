@@ -15,7 +15,7 @@ public class Main
 		
 		LocalSearch ls;
 		
-		Algo algo = Algo.BestImprovment;
+		Algo algo = Algo.FirstImprovment;
 		
 		String fileName;
 		
@@ -31,6 +31,10 @@ public class Main
 		case BestImprovment:
 			ls = new BestImprovment(problem);
 			fileName = new String("bi.csv");
+			break;
+		case FirstImprovment:
+			ls = new FirstImprovment(problem);
+			fileName = new String("fi.csv");
 			break;
 		default:
 			ls = null;
