@@ -40,4 +40,29 @@ public class Solution {
 		int bit = bits.get(i) == 0 ? 1 : 0;
 		bits.set(i, bit);
 	}
+	
+	public String toString()
+	{
+		String str = new String();
+		
+		for(Integer i : bits)
+			str+=i+"";
+		
+		return str;
+	}
+	
+	public boolean equals(Solution that)
+	{
+		boolean flag = true;
+		
+		flag = that.bits.size() == this.bits.size();
+		
+		for(int i = 0; i < bits.size(); i++)
+		{
+			if(that.get(i) != get(i))
+				flag = false;
+		}
+		
+		return flag;
+	}
 }

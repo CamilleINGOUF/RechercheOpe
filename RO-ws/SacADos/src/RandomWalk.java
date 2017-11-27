@@ -19,8 +19,6 @@ public class RandomWalk extends LocalSearch {
 		problem.eval(solutionBuffer);
 		double fitness = problem.eval;
 		
-		int numberEval = 0;
-		
 		do {
 			int randomIndex = (int)(Math.random()*s.bits.size());
 			solutionBuffer.flip(randomIndex);

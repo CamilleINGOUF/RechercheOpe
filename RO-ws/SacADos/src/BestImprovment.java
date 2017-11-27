@@ -21,8 +21,6 @@ public class BestImprovment extends LocalSearch {
 		double bestNeighbor = 0;
 		int iBest = -1;
 		
-		int numberEval = 0;
-		
 		do {
 			iBest = -1;
 			

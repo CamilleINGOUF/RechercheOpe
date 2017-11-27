@@ -1,0 +1,17 @@
+
+public class IteratedLocalSearch extends LocalSearch {
+
+	
+	
+	public IteratedLocalSearch(Problem problem) {
+		super(problem);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public void run(Solution s) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -6,15 +6,16 @@ public class Main
 {	
 	public static void main(String[] args) throws FileNotFoundException, UnsupportedEncodingException
 	{
-		int[] nbEvals = {1000,5000,10000,100000};
+		int[] nbEvals = {/*1000,5000,10000,50000,*/100000};
 		int nbExec = 30;
 	
 		Problem problem = new KnapSack("ks_1000.dat");
 		Solution solution = new Solution(problem.size);
+		solution.randomSolution();
 		
 		LocalSearch ls;
 		
-		AlgoLocalSearch algo = AlgoLocalSearch.RecuitSimule;
+		AlgoLocalSearch algo = AlgoLocalSearch.IteratedLocalSearch;
 		
 		String fileName;
 		
@@ -43,6 +44,10 @@ public class Main
 			ls = new RecuitSimule(problem);
 			fileName = new String("recuit.csv");
 			break;
+		case IteratedLocalSearch:
+			ls = new IteratedLocalSearch(problem);
+			fileName = new String("ils.csv");
+			break;
 		default:
 			ls = null;
 			fileName = new String("error.txt");
@@ -57,6 +62,7 @@ public class Main
 			
 			for (int i = 0; i < nbExec; i++) {
 				solution.randomSolution();
+				ls.resetNumberEval();
 				ls.run(solution);
 				writer.println(nbEvals[k] + " " + ls.bestFitness + " " + ls.fitnessMax);
 				System.out.println(nbEvals[k] + " " + ls.bestFitness);

@@ -1,0 +1,42 @@
+
+public class IteratedLocalSearch extends LocalSearch {
+
+	private int perturbationN;
+	
+	public IteratedLocalSearch(Problem problem) {
+		super(problem);
+		perturbationN = 10;
+	}
+	
+	public IteratedLocalSearch(Problem problem, int numberEvalMax, double fitnessMax) {
+		super(problem);
+		this.numberEvalMax = numberEvalMax;
+		this.fitnessMax = fitnessMax;
+		this.perturbationN = 10;
+	}
+	
+	public void setPertubationN(int n) {
+		this.perturbationN = n;
+	}
+	
+	private void pertubation(Solution s) {
+		
+	}
+
+	@Override
+	public void run(Solution s) {
+		Solution solutionBuffer = new Solution(s);
+		
+		FirstImprovment fi = new FirstImprovment(problem, numberEvalMax, fitnessMax);
+		fi.run(solutionBuffer);
+		double fitness = fi.bestFitness;
+		
+		boolean flag = true;
+		int numberEval = 0;
+		
+		do {
+			
+		} while (flag);
+	}
+
+}

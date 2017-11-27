@@ -21,8 +21,6 @@ public class FirstImprovment extends LocalSearch {
 		double bestNeighbor = 0;
 		int iBest = -1;
 		
-		int numberEval = 0;
-		
 		do {
 			iBest = -1;
 			
@@ -42,6 +40,7 @@ public class FirstImprovment extends LocalSearch {
 				if(numberEval >= numberEvalMax || fitness >= fitnessMax) {
 					fitness = bestNeighbor;
 					flag = false;
+					bestSolution = new Solution(solutionBuffer);
 					break;
 				}
 				
@@ -54,8 +53,10 @@ public class FirstImprovment extends LocalSearch {
 				fitness = bestNeighbor;
 			}
 			
-			else
+			else {
 				flag = false;
+				bestSolution = new Solution(solutionBuffer);
+			}
 			
 		} while (flag);
 		

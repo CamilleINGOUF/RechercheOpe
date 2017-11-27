@@ -29,8 +29,9 @@ public class RecuitSimule extends LocalSearch {
 		double fitness = problem.eval; 
 
 		boolean flag = true;
-		int numberEval = 0;
 		int iterations = 0;
+		
+		int consecutiveFail = 0;
 
 		do {
 
@@ -44,13 +45,16 @@ public class RecuitSimule extends LocalSearch {
 
 			if(delta > 0) {
 				fitness = neighborEval;
+				consecutiveFail = 0;
 			} else {
 				float u = (float) Math.random();
 				double exp = Math.exp(delta / temperature);
 				if(u < exp) {
 					fitness = neighborEval;
+					consecutiveFail = 0;
 				} else {
 					solutionBuffer.flip(randomIndex);
+//					consecutiveFail++;
 				}
 			}
 
@@ -58,7 +62,7 @@ public class RecuitSimule extends LocalSearch {
 				temperature *= alpha;
 			}
 
-			if(numberEval >= numberEvalMax || fitness >= fitnessMax)
+			if(numberEval >= numberEvalMax || fitness >= fitnessMax || consecutiveFail >= 3)
 				flag = false;
 			iterations ++;
 		} while (flag);

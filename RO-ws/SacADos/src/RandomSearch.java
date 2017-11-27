@@ -19,8 +19,6 @@ public class RandomSearch extends LocalSearch {
 		problem.eval(solutionBuffer);
 		double fitness = problem.eval;
 		
-		int numberEval = 0;
-		
 		do {
 			solutionBuffer.randomSolution();
 			
