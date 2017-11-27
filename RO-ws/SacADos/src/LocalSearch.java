@@ -16,9 +16,12 @@ public abstract class LocalSearch {
 		this.fitnessMax = 30000;
 	}
 	
-	public void setOptions(int numberEvalMax, double fitnessMax)
+	public void setNumberEvalMax(int numberEvalMax)
 	{
 		this.numberEvalMax = numberEvalMax;
+	}
+	public void setFitnessMax(double fitnessMax)
+	{
 		this.fitnessMax = fitnessMax;
 	}
 	

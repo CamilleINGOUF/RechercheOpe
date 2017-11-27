@@ -49,12 +49,8 @@ public class BestImprovment extends LocalSearch {
 			
 			if(iBest >= 0 && fitness < bestNeighbor )
 			{
-				solutionBuffer.flip(iBest);
 				fitness = bestNeighbor;
 			}
-			
-			else
-				flag = false;
 			
 		} while (flag);
 		

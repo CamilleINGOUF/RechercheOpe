@@ -6,7 +6,7 @@ public class Main
 {	
 	public static void main(String[] args) throws FileNotFoundException, UnsupportedEncodingException
 	{
-		int[] nbEvals = {1000,5000,10000,50000,100000};
+		int[] nbEvals = {1000,5000,10000,100000};
 		int nbExec = 30;
 	
 		Problem problem = new KnapSack("ks_1000.dat");
@@ -53,12 +53,11 @@ public class Main
 		writer.println("nbeval fitness fitmax");
 		
 		for (int k = 0; k < nbEvals.length; k++) {
-			ls.setOptions(nbEvals[k], 30000);
+			ls.setNumberEvalMax(nbEvals[k]);
 			
 			for (int i = 0; i < nbExec; i++) {
 				solution.randomSolution();
 				ls.run(solution);
-				
 				writer.println(nbEvals[k] + " " + ls.bestFitness + " " + ls.fitnessMax);
 				System.out.println(nbEvals[k] + " " + ls.bestFitness);
 			}

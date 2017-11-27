@@ -1,4 +1,3 @@
-
 public class FirstImprovment extends LocalSearch {
 
 	public FirstImprovment(Problem problem) {
