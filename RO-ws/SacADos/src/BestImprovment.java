@@ -32,7 +32,6 @@ public class BestImprovment extends LocalSearch {
 				numberEval++;
 				problem.eval(solutionBuffer);
 				double neighborEval = problem.eval;
-				numberEval += 1;
 				
 				if (neighborEval > bestNeighbor) {
 					iBest = i;
@@ -40,6 +39,7 @@ public class BestImprovment extends LocalSearch {
 				}
 				
 				if(numberEval >= numberEvalMax || fitness >= fitnessMax) {
+					fitness = bestNeighbor;
 					flag = false;
 					break;
 				}
@@ -57,7 +57,7 @@ public class BestImprovment extends LocalSearch {
 				flag = false;
 			
 		} while (flag);
-		//TODO buggé
+		
 		bestFitness = fitness;
 	}
 

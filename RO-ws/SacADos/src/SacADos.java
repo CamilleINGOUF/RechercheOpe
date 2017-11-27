@@ -5,6 +5,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
 import java.util.Scanner;
 
+@Deprecated
 public class SacADos 
 {
 	private int nbObjects;
@@ -322,7 +323,7 @@ public class SacADos
 		sacBuffer[i] = sacBuffer[i] == 0 ? 1 : 0;
 	}
 
-	public void outputResults(int[] nbEvals, int nbExec, Algo algo) throws FileNotFoundException, UnsupportedEncodingException
+	public void outputResults(int[] nbEvals, int nbExec, AlgoLocalSearch algo) throws FileNotFoundException, UnsupportedEncodingException
 	{
 		int[] sacTemp = new int[nbObjects];
 		
@@ -331,17 +332,17 @@ public class SacADos
 		String fileName = new String();
 		double bestEval = 0;
 
-		if(algo == Algo.RandomSearch)
+		if(algo == AlgoLocalSearch.RandomSearch)
 			fileName = "rs.csv";
-		else if(algo == Algo.RandomWalk)
+		else if(algo == AlgoLocalSearch.RandomWalk)
 			fileName = "rw.csv";
-		else if(algo == Algo.BestImprovment)
+		else if(algo == AlgoLocalSearch.BestImprovment)
 			fileName = "bi.csv";
-		else if(algo == Algo.FirstImprovment)
+		else if(algo == AlgoLocalSearch.FirstImprovment)
 			fileName = "fi.csv";
-		else if(algo == Algo.WorstImprovment)
+		else if(algo == AlgoLocalSearch.WorstImprovment)
 			fileName = "wi.csv";
-		else if(algo == Algo.RecuitSimule)
+		else if(algo == AlgoLocalSearch.RecuitSimule)
 			fileName = "recuit_simule.csv";
 
 		PrintWriter writer = new PrintWriter(fileName, "UTF-8");
@@ -358,17 +359,17 @@ public class SacADos
 				float alpha = .95f;
 				int tempertureUpdate = 50;
 				
-				if(algo == Algo.RandomSearch)
+				if(algo == AlgoLocalSearch.RandomSearch)
 					bestEval = rs(sacTemp, nbEvals[i]);
-				else if(algo == Algo.RandomWalk)
+				else if(algo == AlgoLocalSearch.RandomWalk)
 					bestEval = rw(sacTemp, nbEvals[i]);
-				else if(algo == Algo.BestImprovment)
+				else if(algo == AlgoLocalSearch.BestImprovment)
 					bestEval = bestImprovment(sacTemp, nbEvals[i],fitmax, nbEvals[i]);
-				else if(algo == Algo.FirstImprovment) 
+				else if(algo == AlgoLocalSearch.FirstImprovment) 
 					bestEval = firstImprovment(sacTemp, nbEvals[i],fitmax, nbEvals[i]);
-				else if(algo == Algo.WorstImprovment) 
+				else if(algo == AlgoLocalSearch.WorstImprovment) 
 					bestEval = worstImprovment(sacTemp, nbEvals[i],fitmax, nbEvals[i]);
-				else if(algo == Algo.RecuitSimule)
+				else if(algo == AlgoLocalSearch.RecuitSimule)
 					bestEval = recuitSimule(sacTemp, nbEvals[i], fitmax, temperature, alpha, tempertureUpdate);
 				
 				

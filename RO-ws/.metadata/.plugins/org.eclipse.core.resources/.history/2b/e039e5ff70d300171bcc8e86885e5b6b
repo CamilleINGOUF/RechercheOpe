@@ -1,0 +1,15 @@
+
+public class FirstImprovment extends LocalSearch {
+
+	public FirstImprovment(Problem problem) {
+		super(problem);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public void run(Solution s) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

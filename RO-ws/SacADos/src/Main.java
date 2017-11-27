@@ -11,11 +11,10 @@ public class Main
 	
 		Problem problem = new KnapSack("ks_1000.dat");
 		Solution solution = new Solution(problem.size);
-		solution.randomSolution();
 		
 		LocalSearch ls;
 		
-		Algo algo = Algo.BestImprovment;
+		AlgoLocalSearch algo = AlgoLocalSearch.RecuitSimule;
 		
 		String fileName;
 		
@@ -32,6 +31,18 @@ public class Main
 			ls = new BestImprovment(problem);
 			fileName = new String("bi.csv");
 			break;
+		case FirstImprovment:
+			ls = new FirstImprovment(problem);
+			fileName = new String("fi.csv");
+			break;
+		case WorstImprovment:
+			ls = new WorstImprovment(problem);
+			fileName = new String("wi.csv");
+			break;
+		case RecuitSimule:
+			ls = new RecuitSimule(problem);
+			fileName = new String("recuit.csv");
+			break;
 		default:
 			ls = null;
 			fileName = new String("error.txt");
@@ -45,6 +56,7 @@ public class Main
 			ls.setOptions(nbEvals[k], 30000);
 			
 			for (int i = 0; i < nbExec; i++) {
+				solution.randomSolution();
 				ls.run(solution);
 				
 				writer.println(nbEvals[k] + " " + ls.bestFitness + " " + ls.fitnessMax);

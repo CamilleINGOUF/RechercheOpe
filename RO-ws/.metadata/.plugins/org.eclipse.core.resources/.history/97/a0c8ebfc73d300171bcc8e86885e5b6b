@@ -1,0 +1,21 @@
+
+public class RecuitSimule extends LocalSearch {
+
+	public RecuitSimule(Problem problem) {
+		super(problem);
+		// TODO Auto-generated constructor stub
+	}
+	
+	public RecuitSimule(Problem problem, int numberEvalMax, double fitnessMax) {
+		super(problem);
+		this.numberEvalMax = numberEvalMax;
+		this.fitnessMax = fitnessMax;
+	}
+
+	@Override
+	public void run(Solution s) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

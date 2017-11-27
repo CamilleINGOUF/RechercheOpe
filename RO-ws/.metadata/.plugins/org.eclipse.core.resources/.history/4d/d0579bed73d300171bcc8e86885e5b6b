@@ -1,0 +1,15 @@
+
+public class RecuitSimule extends LocalSearch {
+
+	public RecuitSimule(Problem problem) {
+		super(problem);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public void run(Solution s) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,64 @@
+
+public class RecuitSimule extends LocalSearch {
+
+	private float temperature;
+	private float alpha;
+	private int temperatureUpdate;
+	
+	public RecuitSimule(Problem problem) {
+		super(problem);
+		// TODO Auto-generated constructor stub
+	}
+	
+	public RecuitSimule(Problem problem, int numberEvalMax, double fitnessMax) {
+		super(problem);
+		this.numberEvalMax = numberEvalMax;
+		this.fitnessMax = fitnessMax;
+		temperature = 10;
+		alpha = .95f;
+		temperature = 50;
+	}
+
+	@Override
+	public void run(Solution s) {
+		problem.eval(s);
+		double fitness = problem.eval; 
+		
+		boolean flag = true;
+		int nbEval = 0;
+		int iterations = 0;
+		
+do {
+			
+			int randomIndex = (int)(Math.random()*nbObjects);
+			flipI(sacBuffer, randomIndex);
+			
+			nbEval++;
+			float neighborFitness = eval(sacBuffer);
+			double delta = neighborFitness - fitness;
+			
+			if(delta > 0) {
+				fitness = neighborFitness;
+			} else {
+				float u = (float) Math.random();
+				double exp = Math.exp(delta / temperature);
+				if(u < exp) {
+					fitness = neighborFitness;
+				} else {
+					flipI(sacBuffer, randomIndex);
+				}
+			}
+			
+			if(iterations % tempertureUpdate == 0) {
+				temperature *= alpha;
+			}
+			
+			if(nbEval >= nbEvalMax)
+				flag = false;
+			iterations ++;
+		} while (flag);
+		
+		return fitness;
+	}
+
+}

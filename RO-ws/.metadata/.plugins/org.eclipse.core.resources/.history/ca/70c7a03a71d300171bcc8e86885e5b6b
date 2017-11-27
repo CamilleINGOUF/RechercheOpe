@@ -1,0 +1,20 @@
+
+public class FirstImprovment extends LocalSearch {
+
+	public FirstImprovment(Problem problem) {
+		super(problem);
+	}
+	
+	public FirstImprovment(Problem problem, int numberEvalMax, double fitnessMax) {
+		super(problem);
+		this.numberEvalMax = numberEvalMax;
+		this.fitnessMax = fitnessMax;
+	}
+
+	@Override
+	public void run(Solution s) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
