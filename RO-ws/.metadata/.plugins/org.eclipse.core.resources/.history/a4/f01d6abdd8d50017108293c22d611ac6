@@ -1,0 +1,7 @@
+package AlgoEvolutionnaire;
+
+import java.util.Comparator;
+
+public class ComparatorSolution implements Comparator<T> {
+
+}

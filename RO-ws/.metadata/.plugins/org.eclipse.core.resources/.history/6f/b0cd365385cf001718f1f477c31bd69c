@@ -1,8 +1,0 @@
-public enum Algo {
-	RandomWalk, 
-	RandomSearch, 
-	BestImprovment,
-	FI,
-	WI,
-	RSim;
-}

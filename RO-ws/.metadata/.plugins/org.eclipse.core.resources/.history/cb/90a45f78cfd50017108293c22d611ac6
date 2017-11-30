@@ -1,0 +1,17 @@
+package AlgoEvolutionnaire;
+
+import java.io.FileNotFoundException;
+
+import Problem.KnapSack;
+import Problem.Problem;
+
+public class Main {
+
+	public static void main(String[] args) throws FileNotFoundException {
+		Problem problem = new KnapSack("ks_5.dat");
+		EA ea = new EA(problem);
+		
+		
+	}
+
+}

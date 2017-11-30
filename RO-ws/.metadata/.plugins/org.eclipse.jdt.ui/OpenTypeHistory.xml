@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
 <typeInfo handle="=SacADos/\/usr\/local\/jdk1.8.0_131\/jre\/lib\/rt.jar&lt;java.util.spi(LocaleServiceProvider.class[LocaleServiceProvider" modifiers="1057" timestamp="1489566767000"/>
-<typeInfo handle="=SacADos/src&lt;{LocalSearch.java[LocalSearch" modifiers="1025" timestamp="1511360904000"/>
+<typeInfo handle="=SacADos/\/usr\/local\/jdk1.8.0_131\/jre\/lib\/rt.jar&lt;java.lang(Iterable.class[Iterable" modifiers="1537" timestamp="1489566767000"/>
+<typeInfo handle="=SacADos/\/usr\/local\/jdk1.8.0_131\/jre\/lib\/rt.jar&lt;java.util(Comparator.class[Comparator" modifiers="1537" timestamp="1489566767000"/>
 </typeInfoHistroy>

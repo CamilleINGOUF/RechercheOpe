@@ -1,0 +1,17 @@
+package AlgoEvolutionnaire;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
+import Problem.Solution;
+
+public class Population implements Iterable<Solution> {
+
+	private ArrayList<Solution> solutions;
+	
+	@Override
+	public Iterator<Solution> iterator() {
+		return solutions.iterator();
+	}
+
+}

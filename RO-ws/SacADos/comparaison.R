@@ -1,12 +1,23 @@
-sa <- read.table("recuit.csv", header = TRUE, sep = " ")
+sa <- read.table("sa.csv", header = TRUE, sep = " ")
+ea <- read.table("ea.csv", header = TRUE, sep = " ")
 
+summary(sa$fitness)
+summary(ea$fitness)
 
-ils <- read.table("ils.csv", header = TRUE, sep = " ")
+boxplot(list(sa$fitness,ea$fitness))
 
-sa1 <- sa[sa$nbeval == 100000,]
-ils1 <- ils[ils$nbeval == 1000,]
+plot(sa$fitness)
+plot(ea$fitness)
 
-summary(sa1$fitness)
-summary(ils1$fitness)
+hist(sa[sa$fitmax == 50000,]$fitness)
+hist(ea[ea$fitmax == 50000,]$fitness)
 
-boxplot(list(sa1$fitness,ils1$fitness))
+plot(log10(fitness) ~ fitmax, data = sa)
+plot(log10(fitness) ~ fitmax, data = ea)
+
+sa.split <- split(sa$fitness, factor(sa$fitmax))
+ea.split <- split(ea$fitness, factor(ea$nbeval))
+
+boxplot(sa.split)
+boxplot(ea.split)
+

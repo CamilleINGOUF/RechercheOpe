@@ -9,7 +9,6 @@
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java.io.PrintWriter"/>
 <fullyQualifiedTypeName name="javax.swing.plaf.basic.BasicBorders.RadioButtonBorder"/>
-<fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="java.lang.Math"/>
 <fullyQualifiedTypeName name="KBag"/>
 <fullyQualifiedTypeName name="java.util.Vector"/>
@@ -18,7 +17,28 @@
 <fullyQualifiedTypeName name="LocalSearch"/>
 <fullyQualifiedTypeName name="Problem"/>
 <fullyQualifiedTypeName name="KnapSack"/>
-<fullyQualifiedTypeName name="Solution"/>
 <fullyQualifiedTypeName name="RandomSearch"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="RecuitSimule"/>
+<fullyQualifiedTypeName name="java.lang.Deprecated"/>
+<fullyQualifiedTypeName name="FirstImprovment"/>
+<fullyQualifiedTypeName name="IteratedLocalSearch"/>
+<fullyQualifiedTypeName name="java.io.Writer"/>
+<fullyQualifiedTypeName name="Solution"/>
+<fullyQualifiedTypeName name="Problem.KnapSack"/>
+<fullyQualifiedTypeName name="Problem.Problem"/>
+<fullyQualifiedTypeName name="java.security.Policy"/>
+<fullyQualifiedTypeName name="LocalSearch.IteratedLocalSearch"/>
+<fullyQualifiedTypeName name="javax.swing.text.html.HTMLDocument.Iterator"/>
+<fullyQualifiedTypeName name="java.lang.Iterable"/>
+<fullyQualifiedTypeName name="java.util.Comparator"/>
+<fullyQualifiedTypeName name="java.lang.Comparable"/>
+<fullyQualifiedTypeName name="AlgoEvolutionnaire.ComparatorSolution"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="java.awt.List"/>
+<fullyQualifiedTypeName name="java.util.Collections"/>
+<fullyQualifiedTypeName name="AlgoEvolutionnaire.Population"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="Problem.Solution"/>
+<fullyQualifiedTypeName name="AlgoEvolutionnaire.EA"/>
 </qualifiedTypeNameHistroy>
