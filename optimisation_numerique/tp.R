@@ -28,3 +28,5 @@ main <- function() {
   
   plot(values$dynamique)
 }
+
+main()
