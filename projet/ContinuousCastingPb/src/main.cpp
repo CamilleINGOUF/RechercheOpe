@@ -32,10 +32,16 @@
 #include <fstream>
 #include <iostream>
 
-#include <time.h> 
+#include <time.h>
 
-using namespace cc;
-using namespace artis::common;
+#include <AbstractSearch.hpp>
+#include <RandomWalk.hpp>
+#include <RandomSearch.hpp>
+#include <FirstImprovement.hpp>
+#include <BestImprovement.hpp>
+
+//using namespace cc;
+//using namespace artis::common;
 
 /*
 class View : public cc::View
@@ -125,32 +131,9 @@ int random_search(Solution & solution, int nb_eval_max) {
 
 int main()
 {
-  // constants related to the dimension of the optimization problem 
-    const unsigned int n_stack = 5;
-    const unsigned int n_destination = 8;
-    const unsigned int solution_size = n_destination + n_stack * n_destination * (n_destination - 1);
-
-    // evaluation function from the Continuous Casting simulator
-    EvalCC eval;
-
-    // Declaration of one solution of the optimization problem
-    Solution s ;
-
-    // solution for random selection: all stacks have the same preference 1
-    s.resize(solution_size, 1);
-
-    // init the first solution
-    random_solution(s);
-
-    std::ofstream outputfile;
-    outputfile.open("rs.csv");
-    outputfile << "fitness nbeval\n";
-
-    for(unsigned i = 0; i < 20; i++) {
-      random_search(s, 10);
-      outputfile << s.fitness() << " 10\n";
-      std::cout << i << std::endl;
-    }
-
-    return 0;
+  // MaxEval MinFitness
+  AbstractSearch * search = new BestImprovement(10,100);
+  search->run();
+  
+  return 0;
 }

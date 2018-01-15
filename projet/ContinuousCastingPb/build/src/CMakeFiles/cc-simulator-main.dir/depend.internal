@@ -63,6 +63,11 @@ src/CMakeFiles/cc-simulator-main.dir/generator.cpp.o
  ../src/utils/rand.hpp
  /etudiants/cingouf/Documents/RO/projet/ContinuousCastingPb/src/generator.cpp
 src/CMakeFiles/cc-simulator-main.dir/main.cpp.o
+ ../src/AbstractSearch.hpp
+ ../src/BestImprovement.hpp
+ ../src/FirstImprovement.hpp
+ ../src/RandomSearch.hpp
+ ../src/RandomWalk.hpp
  ../src/cluster.hpp
  ../src/crane.hpp
  ../src/evalCC.hpp

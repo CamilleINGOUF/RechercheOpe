@@ -62,6 +62,11 @@ src/CMakeFiles/cc-simulator-main.dir/generator.cpp.o: ../src/models.hpp
 src/CMakeFiles/cc-simulator-main.dir/generator.cpp.o: ../src/utils/rand.hpp
 src/CMakeFiles/cc-simulator-main.dir/generator.cpp.o: ../src/generator.cpp
 
+src/CMakeFiles/cc-simulator-main.dir/main.cpp.o: ../src/AbstractSearch.hpp
+src/CMakeFiles/cc-simulator-main.dir/main.cpp.o: ../src/BestImprovement.hpp
+src/CMakeFiles/cc-simulator-main.dir/main.cpp.o: ../src/FirstImprovement.hpp
+src/CMakeFiles/cc-simulator-main.dir/main.cpp.o: ../src/RandomSearch.hpp
+src/CMakeFiles/cc-simulator-main.dir/main.cpp.o: ../src/RandomWalk.hpp
 src/CMakeFiles/cc-simulator-main.dir/main.cpp.o: ../src/cluster.hpp
 src/CMakeFiles/cc-simulator-main.dir/main.cpp.o: ../src/crane.hpp
 src/CMakeFiles/cc-simulator-main.dir/main.cpp.o: ../src/evalCC.hpp

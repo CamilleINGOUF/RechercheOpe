@@ -30,6 +30,11 @@ public:
     return *this;
   }
 
+  void flip(int index) const
+  {
+    
+  }
+
   /**
    * set the fitness
    */
