@@ -131,8 +131,8 @@ int random_search(Solution & solution, int nb_eval_max) {
 
 int main()
 {
-  // MaxEval MinFitness
-  AbstractSearch * search = new BestImprovement(10,100);
+  // Exec Number MaxEval MinFitness
+  AbstractSearch * search = new BestImprovement(10,30,100);
   search->run();
   
   return 0;

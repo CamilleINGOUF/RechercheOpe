@@ -10,14 +10,14 @@
 class FirstImprovement : public AbstractSearch
 {
 public:
-  FirstImprovement(int evalMax, int fitnessMin) : AbstractSearch(evalMax, fitnessMin, "fi.csv")
+  FirstImprovement(int execNumber, int evalMax, int fitnessMin) : AbstractSearch(execNumber, evalMax, fitnessMin, "fi.csv")
   {}
 
   void run()
   {
     EvalCC eval;
     Solution s;
-    s.resize(solution_size, 1);
+    s.resize(solution_size,0);
     
     std::ofstream outputfile;
     outputfile.open(_fileName);
@@ -26,33 +26,39 @@ public:
     for(int i = 0; i < _execNumber; i++)
       {
 	randomSolution(s);
+	
+	eval(s);
 
 	bool isOver = false;
 	int bestFitness = s.fitness();
 	int currentFitness = bestFitness;
 
-	int evalNumber = 0;
+	int evalNumber = 1;
     
 	while(!isOver)
 	  {
 	    int jBest = -1;
+	    //std::cout << s.to_string() << std::endl;
 	    for(unsigned j = 0; j < s.size(); j++)
 	      {
-		s.flip(j);
+		unsigned int oldNeighbour = s.neighbour(j);
 		eval(s);
 		evalNumber++;
 
 		currentFitness = s.fitness();
 
+		std::cout << evalNumber << " " << bestFitness << std::endl;
+		
 		if(currentFitness < bestFitness)
 		  {
 		    jBest = j;
+		    //std::cout << s[j] << " new"<<std::endl;
 		    bestFitness = currentFitness;
 		    break;
 		  }
 		else
 		  {
-		    s.flip(j);
+		    s[j] = oldNeighbour;
 		  }
 		
 		if(evalNumber >= _evalMax or bestFitness <= _fitnessMin)

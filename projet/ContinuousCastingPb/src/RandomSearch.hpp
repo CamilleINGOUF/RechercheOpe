@@ -10,7 +10,7 @@
 class RandomSearch : public AbstractSearch
 {
 public:
-  RandomSearch(int evalMax, int fitnessMin) : AbstractSearch(evalMax, fitnessMin, "rs.csv")
+  RandomSearch(int execNumber, int evalMax, int fitnessMin) : AbstractSearch(execNumber, evalMax, fitnessMin, "rs.csv")
   {}
 
   void run()

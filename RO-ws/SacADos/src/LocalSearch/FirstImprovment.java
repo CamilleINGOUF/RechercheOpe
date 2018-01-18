@@ -41,18 +41,17 @@ public class FirstImprovment extends LocalSearch {
 					break;
 				}
 				
+				solutionBuffer.flip(i);
+				
 				if(numberEval >= numberEvalMax || fitness >= fitnessMax) {
 					fitness = bestNeighbor;
 					flag = false;
 					break;
 				}
-				
-				solutionBuffer.flip(i);
 			}
 			
 			if(iBest >= 0 && fitness < bestNeighbor )
 			{
-				solutionBuffer.flip(iBest);
 				fitness = bestNeighbor;
 			}
 			

@@ -11,12 +11,11 @@
 
 class AbstractSearch {
 public:
-  AbstractSearch(int evalMax, int fitnessMin, std::string fileName): _evalMax(evalMax)
-								   , _fitnessMin(fitnessMin),
-								     _fileName(fileName)
-  {
-    _execNumber = 10;
-  }
+  AbstractSearch(int execNumber, int evalMax, int fitnessMin, std::string fileName): _evalMax(evalMax)
+										   , _fitnessMin(fitnessMin)
+										   ,_fileName(fileName)
+										   ,_execNumber(execNumber)
+  {}
 
   ~AbstractSearch()
   {}
@@ -36,12 +35,11 @@ public:
   }
 
   virtual void run() = 0;
-
   
   const unsigned int n_stack = 5;
   const unsigned int n_destination = 8;
   const unsigned int solution_size = n_destination + n_stack * n_destination * (n_destination - 1);
-
+  //const unsigned int solution_size = 20;
 protected:
   Solution _bestSolution;
 

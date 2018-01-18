@@ -10,7 +10,7 @@
 class RandomWalk : public AbstractSearch
 {
 public:
-  RandomWalk(int evalMax, int fitnessMin) : AbstractSearch(evalMax, fitnessMin, "rw.csv")
+  RandomWalk(int execNumber, int evalMax, int fitnessMin) : AbstractSearch(execNumber, evalMax, fitnessMin, "rw.csv")
   {}
 
   void run()
@@ -37,7 +37,7 @@ public:
 	  {
 	    srand(time(NULL));
 	    int randomIndex = rand() % (s.size() + 1);
-	    s.flip(randomIndex);
+	    s.neighbour(randomIndex);
 	    eval(s);
 	    evalNumber++;
 	    currentFitness = s.fitness();

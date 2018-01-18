@@ -6,6 +6,8 @@
 #include <string>
 #include <sstream>
 
+#include <time.h>
+
 /**
    Classe pour représenter une solution
    
@@ -30,9 +32,14 @@ public:
     return *this;
   }
 
-  void flip(int index) const
+  unsigned int neighbour(int index)
   {
+    unsigned int returnValue = this->operator[](index);
+    srand(time(NULL));
+
+    this->operator[](index) = rand() % 101;
     
+    return returnValue;
   }
 
   /**

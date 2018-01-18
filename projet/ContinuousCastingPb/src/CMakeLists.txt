@@ -1,9 +1,13 @@
-IF ("${CMAKE_BUILD_TYPE}" STREQUAL "Debug")
-  message("TRACE on")
-  add_definitions(-DWITH_TRACE_MODEL)
-ELSE ("${CMAKE_BUILD_TYPE}" STREQUAL "Debug")
-  message("TRACE off")
-ENDIF ("${CMAKE_BUILD_TYPE}" STREQUAL "Debug")
+#IF ("${CMAKE_BUILD_TYPE}" STREQUAL "Debug")
+#  message("TRACE on")
+#  add_definitions(-DWITH_TRACE_MODEL)
+#ELSE ("${CMAKE_BUILD_TYPE}" STREQUAL "Debug")
+#  message("TRACE off")
+#ENDIF ("${CMAKE_BUILD_TYPE}" STREQUAL "Debug")
+cmake_minimum_required( VERSION 3.0 )
+project( MON_PROJET_RO )
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -Wall -Wextra")
+set( CMAKE_BUILD_TYPE Debug ) 
 
 INCLUDE_DIRECTORIES(
   ${CMAKE_SOURCE_DIR}/src
