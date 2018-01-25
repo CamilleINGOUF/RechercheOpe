@@ -26,6 +26,7 @@ public:
     for(int i = 0; i < _execNumber; i++)
       {
 	randomSolution(s);
+	std::cout << "starting firstImp" << std::endl;
 	
 	eval(s);
 
@@ -38,7 +39,6 @@ public:
 	while(!isOver)
 	  {
 	    int jBest = -1;
-	    //std::cout << s.to_string() << std::endl;
 	    for(unsigned j = 0; j < s.size(); j++)
 	      {
 		unsigned int oldNeighbour = s.neighbour(j);
@@ -52,7 +52,6 @@ public:
 		if(currentFitness < bestFitness)
 		  {
 		    jBest = j;
-		    //std::cout << s[j] << " new"<<std::endl;
 		    bestFitness = currentFitness;
 		    break;
 		  }

@@ -27,7 +27,7 @@ public:
       {
 	randomSolution(s);
 	eval(s);
-
+	std::cout << "starting bestImp" << std::endl;
 	bool isOver = false;
 	int bestFitness = s.fitness();
 	int currentFitness = bestFitness;
@@ -44,7 +44,7 @@ public:
 		evalNumber++;
 
 		currentFitness = s.fitness();
-
+		std::cout << evalNumber << " " << bestFitness << std::endl;
 		if(currentFitness < bestFitness)
 		  {
 		    jBest = j;

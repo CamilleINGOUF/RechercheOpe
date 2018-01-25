@@ -21,6 +21,6 @@ ADD_EXECUTABLE(cc-simulator-main evalCC.hpp evalCC.cpp solution.hpp cluster.hpp 
   graph_manager.hpp models.hpp models.cpp main.cpp run_out_table.hpp
   run_out_table.cpp stack.hpp stack.cpp stock.hpp stock.cpp utils/rand.cpp
   utils/rand.hpp AbstractSearch.hpp RandomWalk.hpp RandomSearch.hpp FirstImprovement.hpp
-  BestImprovement.hpp)
+  BestImprovement.hpp SimulatedAnnealing.hpp)
 
 TARGET_LINK_LIBRARIES(cc-simulator-main pthread)

@@ -39,6 +39,7 @@
 #include <RandomSearch.hpp>
 #include <FirstImprovement.hpp>
 #include <BestImprovement.hpp>
+#include <SimulatedAnnealing.hpp>
 
 //using namespace cc;
 //using namespace artis::common;
@@ -100,40 +101,14 @@ void stat(const artis::common::RootCoordinator < DoubleTime,
     }
 }
 */
-void random_solution(Solution & solution) {
-  srand(time(NULL));
-  for(unsigned i = 0; i < solution.size(); i++) {
-    int r = rand() % 101;
-    solution[i] = r;
-  }
-}
-
-int random_search(Solution & solution, int nb_eval_max) {
-  EvalCC eval;
-  
-  Solution buffer = solution;
-  int best_fitness = solution.fitness();
-  for(signed i = 0; i < nb_eval_max; i++) {
-    
-    random_solution(buffer);
-    eval(buffer);
-    int fitness = buffer.fitness();
-    
-    if(fitness < best_fitness) {
-      solution = buffer;
-      best_fitness = fitness;
-    }
-  }
-
-  eval(solution);
-  return best_fitness;
-}
 
 int main()
 {
-  // Exec Number MaxEval MinFitness
-  AbstractSearch * search = new BestImprovement(10,30,100);
+  //                                  ExecNumber MaxEval MinFitness
+  std::cout << "main start" << std::endl;
+  AbstractSearch * search = new SimulatedAnnealing(1,288,100);
   search->run();
+  std::cout << "main end" << std::endl;
   
   return 0;
 }

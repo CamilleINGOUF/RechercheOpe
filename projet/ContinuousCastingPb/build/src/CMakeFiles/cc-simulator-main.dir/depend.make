@@ -67,6 +67,7 @@ src/CMakeFiles/cc-simulator-main.dir/main.cpp.o: ../src/BestImprovement.hpp
 src/CMakeFiles/cc-simulator-main.dir/main.cpp.o: ../src/FirstImprovement.hpp
 src/CMakeFiles/cc-simulator-main.dir/main.cpp.o: ../src/RandomSearch.hpp
 src/CMakeFiles/cc-simulator-main.dir/main.cpp.o: ../src/RandomWalk.hpp
+src/CMakeFiles/cc-simulator-main.dir/main.cpp.o: ../src/SimulatedAnnealing.hpp
 src/CMakeFiles/cc-simulator-main.dir/main.cpp.o: ../src/cluster.hpp
 src/CMakeFiles/cc-simulator-main.dir/main.cpp.o: ../src/crane.hpp
 src/CMakeFiles/cc-simulator-main.dir/main.cpp.o: ../src/evalCC.hpp

@@ -17,7 +17,7 @@ public:
 										   ,_execNumber(execNumber)
   {}
 
-  ~AbstractSearch()
+  virtual ~AbstractSearch()
   {}
 
   void randomSolution(Solution & solution) const
